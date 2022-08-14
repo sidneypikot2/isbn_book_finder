@@ -1,0 +1,17 @@
+var search_button = $("#search_button");
+var details = $("#display");
+var invalid_tooltip = $("#isbn_invalid-tooltip");
+
+<% if @book %>
+search_button.find("i").removeClass("fa-spinner fa-spin").addClass("fa-search");
+details.html("<%= j (render partial: 'components/details', locals: {book: @book}) %>")
+details.show("slow");
+<% else %>
+details.hide("slow", function() {
+  details.html("")
+});
+invalid_tooltip.html("<%= @message %>");
+invalid_tooltip.show("slow")
+search_button.removeClass("btn-info").addClass("btn-danger");
+search_button.find("i").removeClass("fa-spinner fa-spin fa-search").addClass("fa-beat fa-exclamation")
+<% end %>

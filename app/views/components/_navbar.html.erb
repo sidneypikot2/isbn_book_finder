@@ -1,0 +1,13 @@
+<nav id="main_nav" class="navbar navbar-dark bg-dark p-5" >
+  <div class="col text-center">
+    <%= link_to 'BookFinder', root_path, class: 'brand_name navbar-brand m-auto fs-vw-5 text-info' %>
+    <div class="m-auto col-lg-5 col-md-7 col-sm-10">
+      <div class="input-group">
+        <input class="form-control mr-2 fs-vw-3" type="text" placeholder="Input ISBN (10 or 13)" aria-label="Search" id="search_input" maxlength="17" minlength="10" required>
+        <div class="invalid-tooltip" id="isbn_invalid-tooltip">
+        </div>
+        <button class="btn btn-info" type="submit" id="search_button"><i class="fas fa-search fs-vw-3"></i></button>
+      </div>
+    </div>
+  </div>
+</nav>

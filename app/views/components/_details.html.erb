@@ -1,0 +1,70 @@
+<% if book.present? %>
+<div id="details_block" class="px-3 shadow bg-body rounded h-100 m-auto row">
+  <div class="row w-100 h-auto m-auto">
+    <div class="col-lg-4 m-auto">
+      <div class="p-lg-5 p-1 row">
+        <img src=<%= book.image_url %> alt="Italian Trulli" class="shadow-lg h-auto m-auto p-0 book_image">
+      </div>
+    </div>
+    <div class="col-lg-8 p-lg-4 p-1  m-auto">
+      <div class="text-center">
+        <p class="text-info fs-vw-5 fw-bold p-0 m-0">
+          <%= book.title %>
+        </p>
+      </div>
+      <div class="fs-vw-3 text-center fw-semibold text-secondary">
+        <p>
+          by
+          <%= book.authors.collect { |author| author.full_name }.join(", ")%>
+        </p>
+      </div>
+      <% if book.edition.present? %>
+      <div class="fs-vw-3 text-center fw-semibold text-secondary row mb-3">
+        <p class="col-lg-6 text-lg-end pr-1 m-0">
+          Edition:   
+        </p>
+        <p class="col-lg-6 text-lg-start pl-1 m-0">
+          <%= book.edition %>
+        </p>
+      </div>
+      <% end %>
+      <div class="fs-vw-3 text-center fw-semibold text-secondary row mb-3">
+        <p class="col-lg-6 text-lg-end pr-1 m-0">
+          Price:   
+        </p>
+        <p class="col-lg-6 text-lg-start pl-1 m-0">
+          <%= book.display_price %>
+        </p>
+      </div>
+      <div class="fs-vw-3 text-center fw-semibold text-secondary row mb-3">
+        <p class="col-lg-6 text-lg-end pr-1 m-0">
+          ISBN:   
+        </p>
+        <p class="col-lg-6 text-lg-start pl-1 m-0">
+          <%= book.isbn %>
+        </p>
+      </div>
+      <div class="fs-vw-3 text-center fw-semibold text-secondary row mb-3">
+        <p class="col-lg-6 text-lg-end pr-1 m-0">
+          Publication Year:
+        </p>
+        <p class="col-lg-6 text-lg-start pl-1 m-0">
+          <%= book.publication_year %>
+        </p>
+      </div>
+      <div class="fs-vw-3 text-center fw-semibold text-secondary row mb-3">
+        <p class="col-lg-6 text-lg-end pr-1 m-0">
+          Publisher: 
+        </p>
+        <p class="col-lg-6 text-lg-start pl-1 m-0">
+          <%= book.publisher.name %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<% else%>
+<div><%= ISBN_INVALID %>
+</div>
+<% end%>
+
