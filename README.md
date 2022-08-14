@@ -11,6 +11,11 @@
 7. visit `localhost:3000` to go to the app
 8. for json response - visit `localhost:3000/books/search.json?isbn=isbn_10_or_13`
 
+## Access from heroku
+
+* `https://isbn-book-finder.herokuapp.com/`
+* `https://isbn-book-finder.herokuapp.com/books/search.json?isbn=isbn_10_or_13`
+
 ## Valid ISBN for existing books
 
 |      ISBN 13       |       ISBN 10     |
